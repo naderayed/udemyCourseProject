@@ -1,13 +1,18 @@
 <!--<input type="text" name="" id=""-->
 <!--       (input)="onUpdateServerName($event)">-->
-
-<input type="text" name="" id=""
+<div class="container">
+<input class="input input-group-text" type="text" name="" id=""
        [(ngModel)]="serverName" >
 <!--<p>{{ serverName }}</p>-->
 <button class="btn btn-primary"
         [disabled]="!allowNewServer"
         (click)="onCreationServer()"
 >Add Server</button>
-<p>{{ serverCreationStatus }}</p>
+<p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
+<!--<ng-template-->
+<!--  #noServer >-->
+<!--  <p>No server was created</p>-->
+<!--  </ng-template>-->
 <app-server></app-server>
 <app-server></app-server>
+</div>
