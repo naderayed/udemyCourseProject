@@ -16,6 +16,7 @@ export class ServersComponent implements OnInit {
   serverCreationStatus: string = "No server created!";
   serverName:string="";
   serverCreated : boolean= false;
+  servers=["TestServer","TestServer 2"]
 
   constructor() {
 
@@ -29,6 +30,7 @@ export class ServersComponent implements OnInit {
 
   onCreationServer() {
     this.serverCreated=true;
+    this.servers.push(this.serverName);
     this.serverCreationStatus = "Server Was created, Name is "+this.serverName  }
 
   onUpdateServerName(event: Event) {
