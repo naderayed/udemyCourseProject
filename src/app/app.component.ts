@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   // title = 'udemyCourseProject';
-  serverElements = [];
+  serverElements = [
+    {
+      type: 'server',
+      name: 'TestServer',
+      content: 'Just a Test!'
+    },
+    {
+      type: 'server',
+      name: 'TestServer',
+      content: 'Just a Test!'
+    }
+
+  ];
   newServerName = '';
   newServerContent = '';
 
