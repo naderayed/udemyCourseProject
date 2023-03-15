@@ -13,12 +13,15 @@
 <!--</div>-->
 
 <div class="container">
-<app-cockpit></app-cockpit>
+<app-cockpit
+(onServerAdded)="onServerAdded($event)"
+(onBlueprintAdded)="onBlueprintAdded($event)"
+></app-cockpit>
   <hr>
   <div class="row">
     <div class="col-xs-12">
     <app-server-element *ngFor="let serverElement of serverElements"
-    [element]="serverElement"
+    [srvElement]="serverElement"
     ></app-server-element>
     </div>
   </div>
