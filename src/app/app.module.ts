@@ -7,7 +7,10 @@ import { ServersComponent } from './servers/servers.component';
 import {FormsModule} from "@angular/forms";
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
+import { BasicHighlightDirective} from "./basic-highlight/basic-highlight.directive";
+import { BetterHighlightDirective } from "./better-highlight/better-highlight.directive";
 
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,6 +18,7 @@ import { ServerElementComponent } from './server-element/server-element.componen
     ServersComponent,
     CockpitComponent,
     ServerElementComponent
+    ,BasicHighlightDirective, BetterHighlightDirective
   ],
     imports: [
         BrowserModule,

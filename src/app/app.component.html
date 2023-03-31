@@ -12,18 +12,63 @@
 
 <!--</div>-->
 
+<!--<div class="container">-->
+<!--<app-cockpit-->
+<!--(onServerAdded)="onServerAdded($event)"-->
+<!--(onBlueprintAdded)="onBlueprintAdded($event)"-->
+<!--&gt;</app-cockpit>-->
+<!--  <hr>-->
+<!--  <div class="row">-->
+<!--    <div class="col-xs-12">-->
+<!--    <app-server-element *ngFor="let serverElement of serverElements"-->
+<!--    [srvElement]="serverElement"-->
+<!--    >-->
+<!--      <p>-->
+<!--        <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>-->
+<!--        <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>-->
+<!--      </p>-->
+<!--    </app-server-element>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
 <div class="container">
-<app-cockpit
-(onServerAdded)="onServerAdded($event)"
-(onBlueprintAdded)="onBlueprintAdded($event)"
-></app-cockpit>
-  <hr>
   <div class="row">
     <div class="col-xs-12">
-    <app-server-element *ngFor="let serverElement of serverElements"
-    [srvElement]="serverElement"
-    ></app-server-element>
+      <button class=" btn btn-primary"
+      (click)="onlyOdd = !onlyOdd"
+      >
+        Only Show Odd Numbers
+      </button>
+      <br>
+      <ul class="list-group">
+        <div *ngIf="onlyOdd;"
+
+        >
+          <li class="list-group-item"
+              *ngFor="let  odd of oddNumber"
+              [ngClass]="{odd:odd %2 !==0 }"
+              [ngStyle]="{backgroundColor : odd % 2!==0?'yellow':'transparent'}"
+            >
+            {{ odd }}
+          </li>
+        </div>
+          <div  *ngIf="!onlyOdd;"
+
+          >
+            <li class="list-group-item"
+                [ngClass]="{odd:even %2 !==0 }"
+                [ngStyle]="{backgroundColor : even % 2!==0?'yellow':'transparent'}"
+                *ngFor="let even of evenNumber">
+              {{ even }}
+            </li>
+          </div>
+
+      </ul>
+
     </div>
+    <p appBasicHighLight >Style me with perso Directive</p>
+    <p appBetterHighlight >Style me with perso Directive</p>
   </div>
 </div>
 
